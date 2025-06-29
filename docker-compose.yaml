@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  invoiceshelf:
+    build: .
+    ports:
+      - "3010:3000"      # expone 3010 en el host ? 3000 en el contenedor
+    volumes:
+      - ./database:/app/database
+    environment:
+      - APP_ENV=production
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/app/database/database.sqlite
+    restart: unless-stopped
