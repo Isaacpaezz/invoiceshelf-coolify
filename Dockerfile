@@ -11,6 +11,10 @@ WORKDIR /app
 
 # 3) Instala dependencias
 COPY composer.json composer.lock ./
+
+# Debug: lista archivos antes de instalar dependencias
+RUN ls -lR /app/app/Space
+
 RUN composer install --no-dev --optimize-autoloader
 
 # 4) Código de la app
