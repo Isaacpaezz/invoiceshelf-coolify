@@ -1,5 +1,5 @@
 # 1) Base PHP + SQLite
-FROM php:8.1-cli-alpine
+FROM php:FROM php:8.2-cli-alpine
 
 RUN apk add --no-cache oniguruma-dev sqlite-dev \
  && docker-php-ext-install pdo pdo_sqlite mbstring
